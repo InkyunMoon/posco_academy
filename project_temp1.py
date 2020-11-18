@@ -1,13 +1,11 @@
 import sys
 
-path = '/home/piai/github/posco_academy/'
-
 if len(sys.argv) == 1:
-    file_name = 'newstudents.txt'
+    file_name = 'students.txt'
 else:
     file_name = input('enter filename: ')
 
-with open(path + 'students.txt', 'r') as f:
+with open(file_name, 'r') as f:
     students = f.readlines()
 
 student_list = []
@@ -39,7 +37,7 @@ for student in student_list:
     result_list.append(mean_grade(student))
 
 # 정렬
-# result_list.sort(key = lambda x: x[3], reverse=True)
+result_list.sort(key = lambda x: x[3], reverse=True)
 # result_list
 
 result_list.sort(key=lambda x:x[4], reverse=True)
@@ -48,7 +46,7 @@ result_list.sort(key=lambda x:x[4], reverse=True)
 
 def func_show():
     result_list.sort(key=lambda x:x[4], reverse=True)
-    print('Student','    ','Name','  ','Midterm','Final','Average','Grade',sep='\t')
+    print('Student', 'Name','Midterm','Final','Average','Grade',sep='\t')
     print('----------------------------------------------------------')
     for row in result_list:
         
@@ -147,36 +145,38 @@ def quit():
 func_list = ['show','search','changescore','searchgrade','add','remove','quit']
 while True:
     param = input('# ').lower()
-# show 함수   
+# 1번 함수    
     if param == 'show':
         func_show()
-# quit 함수  
+  
     elif param == 'quit':
         quit()
         break
 
-# search 함수
+# 2번 함수
     elif param == 'search':
         ID = int(input('Student ID: '))
         func_search(ID)
     
-# changescore 함수
+# 3번 함수
     elif param == 'changescore':
         ID = int(input('Student ID: '))
         func_changescore(ID)
 
-# add 함수
+# 4번 함수
     elif param == 'add':
         ID = int(input('Student ID: '))
         func_add(ID)
         
-# searchgrade 함수
+# 5번 함수
     elif param == 'searchgrade':
         GRADE = input('Grade to search:: ').upper()
         func_searchgrade(GRADE)
         
-# remove 함수
+# 6번 함수
     elif param == 'remove':
         ID = int(input('Student ID: '))
         func_remove(ID)
+        
+# 7번 함수
 
