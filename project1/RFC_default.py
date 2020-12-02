@@ -17,7 +17,7 @@ from sklearn.svm import SVC
 # from sklearn.
 # from catboost import CatBoostClassifier
 
-df_tele = pd.read_csv('C:/Users/moon/Documents/posco_academy/project1/B4_카드_DataSet/Telemarketing_Data_dropped.csv')
+df_tele = pd.read_csv('C:/Users/moon/Documents/github/posco_academy/project1/B4_카드_DataSet/tele_for_modele.csv')
 
 df_tele.rename(columns={'연령':'age','직업군':'group_job','결혼여부':'is_married',\
                         '학력':'edu','신용카드소지여부':'is_holder','주택대출여부':'is_mortgage',\
